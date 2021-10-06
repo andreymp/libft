@@ -7,11 +7,13 @@ char	*ft_strchr(const char	*str, int code)
 
 	i = 0;
 	ptr = (char *) str;
-	while (*(ptr + i) != '\0')
+	while (*(ptr + i))
 	{
 		if (*(ptr + i) == code)
 			return (ptr + i);
 		i++;
 	}
+	if (code == '\0')
+		return (ptr + i);
 	return (0);
 }

@@ -7,11 +7,11 @@ void	ft_bzero(void	*source, size_t	length)
 
 	str = (char *) source;
 	i = 0;
-	if (ft_strlen(str) < length || !length)
+	if (!length)
 		return ;
 	else
 	{
-		while (*(str + i) != '\0' && i < length)
+		while (i < length)
 		{
 			*(str + i) = '\0';
 			i++;
