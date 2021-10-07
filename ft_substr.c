@@ -7,11 +7,11 @@ char	*ft_substr(char const	*s, unsigned int	start, size_t	len)
 	char			*str;
 
 	i = start;
-	if (start >= ft_strlen(s) - 1)
-		return (0);
-	if (len <= ft_strlen(s) - start)
+	if (start > ft_strlen(s) - 1)
+		return (ft_strdup(""));
+	if (len < ft_strlen(s) - start)
 	{
-		str = (char *) malloc((len + 1)* sizeof(char));
+		str = (char *) malloc((len + 1) * sizeof(char));
 		if (str)
 		{
 			ft_memcpy(str, s + start, len);
@@ -29,10 +29,3 @@ char	*ft_substr(char const	*s, unsigned int	start, size_t	len)
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	puts(ft_substr("Andrey is jobject", 8, 2));
-}
-*/

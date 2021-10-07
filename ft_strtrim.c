@@ -2,64 +2,16 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static int	left(char const	*s1, char const	*set)
-{
-	int	i;
-	int	j;
-	int flag;
-
-	i = 0;
-	while (*(s1 + i))
-	{
-		j = 0;
-		flag = 0;
-		while (*(set + j))
-		{
-			if (*(set + j) == *(s1 + i))
-			{
-				i++;
-				flag = 1;
-			}
-			j++;
-		}
-		if (!flag)
-			break ;
-	}
-	return (i);
-}
-
-static int	right(char const	*s1, char const	*set)
-{
-	int	i;
-	int	j;
-	int flag;
-
-	i = ft_strlen(s1) - 1;
-	while (*(s1 + i))
-	{
-		j = 0;
-		flag = 0;
-		while (*(set + j))
-		{
-			if (*(set + j) == *(s1 + i))
-			{
-				i--;
-				flag = 1;
-			}
-			j++;
-		}
-		if (!flag)
-			break ;
-	}
-	return (i);
-}
-
 char	*ft_strtrim(char const	*s1, char const	*set)
 {
-	int		r;
-	int		l;
+	int		len;
 
-	r = right(s1, set);
-	l = left(s1, set);
-	return (ft_substr(s1, l, r - l + 1));
+	if (!s1 || !set)
+		return (0);
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	len = ft_strlen(s1);
+	while (len > 0 && ft_strchr(set, *(s1 + len)))
+		len--;
+	return (ft_substr(s1, 0, len + 1));
 }

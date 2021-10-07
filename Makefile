@@ -18,6 +18,7 @@ FILES = ft_memset \
 		ft_strrchr \
 		ft_strnstr \
 		ft_strncmp \
+		ft_striteri \
 		ft_atoi \
 		ft_isalpha \
 		ft_isdigit \

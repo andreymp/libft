@@ -10,13 +10,14 @@ char	*ft_strnstr(const char	*big, const char	*little, size_t	len)
 	ptr1 = (char *) big;
 	ptr2 = (char *) little;
 	i = 0;
-	while (ptr1 + i && i < len)
+	if (!(*ptr2))
+		return (ptr1 + i);
+	while (*(ptr1 + i) && i < len)
 	{
 		if (*(ptr1 + i) == *ptr2)
 		{
-			j = i;
-			while (*(ptr1 + i + j) == *(ptr2 + j) && i + j < len
-				&& ptr2 + j && ptr1 + i + j)
+			j = 0;
+			while (*(ptr1 + i + j) == *(ptr2 + j) && i + j < len)
 				j++;
 			if (*(ptr2 + j) == '\0')
 				return (ptr1 + i);

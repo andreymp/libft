@@ -26,7 +26,9 @@ char	*ft_itoa(int	n)
 	if (n == -2147483648)
 		return (ft_strjoin("-", "2147483648"));
 	length = get_length(n);
-	res = (char *) malloc(length * sizeof(char));
+	res = (char *) malloc((length + 1) * sizeof(char));
+	if (!res)
+		return (0);
 	i = length - 1;
 	if (n < 0)
 	{
@@ -40,5 +42,6 @@ char	*ft_itoa(int	n)
 		i--;
 	}
 	*(res + i) = n + 48;
+	*(res + length) = '\0';
 	return (res);
 }

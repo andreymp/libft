@@ -9,7 +9,7 @@ void	*ft_memchr(const void	*str, int	code, size_t	n)
 	ptr = (char *) str;
 	while (i < n)
 	{
-		if (*(ptr + i) == code)
+		if (*(ptr + i) == (char) code)
 			return (ptr + i);
 		i++;
 	}

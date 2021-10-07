@@ -9,7 +9,7 @@ char	*ft_strchr(const char	*str, int code)
 	ptr = (char *) str;
 	while (*(ptr + i))
 	{
-		if (*(ptr + i) == code)
+		if (*(ptr + i) == (char) code)
 			return (ptr + i);
 		i++;
 	}
