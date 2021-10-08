@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jobject <jobject@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/08 14:03:35 by jobject           #+#    #+#             */
+/*   Updated: 2021/10/08 14:11:10 by jobject          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <unistd.h>
 
-static int	get_length(int	n)
+static int	get_length(int n)
 {
 	int	size;
 
@@ -17,7 +29,7 @@ static int	get_length(int	n)
 	return (size);
 }
 
-void	ft_putnbr_fd(int	n, int	fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int		length;
 	int		i;

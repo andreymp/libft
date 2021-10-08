@@ -1,42 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jobject <jobject@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/08 14:03:53 by jobject           #+#    #+#             */
+/*   Updated: 2021/10/08 15:54:54 by jobject          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
-static int	get_size(char const	*s, char	c)
+static int	get_size(char const	*s, char c)
 {
 	int	size;
 	int	i;
 
-	size = 1;
+	size = 0;
 	i = 0;
-	while (*(s + i) == c)
-		i++;
 	while (*(s + i))
 	{
-		if (*(s + i) == c)
-		{
-			while (*(s + i) == c)
-				i++;
+		if (*(s + i) != c)
 			size++;
-		}
-		i++;
+		while (*(s + i) != c && *(s + i))
+			i++;
+		if (*(s + i))
+			i++;
 	}
 	size++;
 	return (size);
 }
 
-char	**ft_split(char const	*s, char	c)
+char	**filler(const char	*s, char c, char	**strs)
 {
-	char	**strs;
 	int		i;
 	int		j;
 	int		len;
 
-	if (!s)
-		return (0);
-	strs = (char **) malloc(get_size(s, c) * sizeof(char *));
-	if (!strs)
-		return (0);
 	j = 0;
 	i = 0;
 	while (*(s + i))
@@ -51,23 +53,21 @@ char	**ft_split(char const	*s, char	c)
 		}
 		if (len > 0)
 			strs[j++] = ft_substr(s, i - len, len);
-		i++;
+		if (*(s + i))
+			i++;
 	}
-	strs[j] = 0;
 	return (strs);
 }
-/*
-int main()
-{
-	char **strs = ft_split("my name is hey", 0);
-	int i = 0;
 
-	while (strs[i])
-	{
-		puts(strs[i]);
-		free(strs[i]);
-		i++;
-	}
-	free(strs);
+char	**ft_split(char const	*s, char c)
+{
+	char	**strs;
+
+	if (!s)
+		return (0);
+	strs = (char **) ft_calloc(get_size(s, c), sizeof(char *));
+	if (!strs)
+		return (0);
+	filler(s, c, strs);
+	return (strs);
 }
-*/

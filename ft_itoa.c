@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jobject <jobject@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/08 14:02:11 by jobject           #+#    #+#             */
+/*   Updated: 2021/10/08 14:06:48 by jobject          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 #include <stdlib.h>
 
-static int	get_length(int	n)
+static int	get_length(int n)
 {
 	int	size;
 
@@ -17,7 +29,7 @@ static int	get_length(int	n)
 	return (size);
 }
 
-char	*ft_itoa(int	n)
+char	*ft_itoa(int n)
 {
 	int		length;
 	char	*res;
