@@ -1,4 +1,4 @@
-# libft
+# libft (42 project)
 First library with some recoded functions from libc and other external ones (Definition of project is on branch "master")
 ## Functions from "libc"
 1. isalpha
