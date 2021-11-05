@@ -46,13 +46,12 @@ It's aim to aplly function given as argumnet to each character of a string. It r
 ### ft_striteri (void ft_striteri(char *s, void (*f)(unsigned int, char*)))
 
 It's aim to aplly function given as argumnet to each character of a string.
-### ft_putchar_fd (void ft_putchar_fd(char c, int fd)), ft_putstr_fd (void ft_putstr_fd(char *s, int fd)), 
-### ft_putendl_fd (void ft_putendl_fd(char *s, int fd)), ft_putnbr_fd (void ft_putnbr_fd(int n, int fd))
+### ft_putchar_fd (void ft_putchar_fd(char c, int fd)), ft_putstr_fd (void ft_putstr_fd(char *s, int fd)), ft_putendl_fd (void ft_putendl_fd(char *s, int fd)), ft_putnbr_fd (void ft_putnbr_fd(int n, int fd))
 
-ft_putchar_fd: Outputs the character to the given file descriptor.
-ft_putstr_fd: Outputs the string to the given file descriptor.
-ft_putendl_fd: Outputs the string to the given file descriptor, followed by a new line.
-ft_putnbr_fd: Outputs the integer to the given file descriptor.
+1. ft_putchar_fd: Outputs the character to the given file descriptor.
+2. ft_putstr_fd: Outputs the string to the given file descriptor.
+3. ft_putendl_fd: Outputs the string to the given file descriptor, followed by a new line.
+4. ft_putnbr_fd: Outputs the integer to the given file descriptor.
 
 ## Bonus functions (linked with lists)
 ### ft_lstnew
@@ -80,6 +79,6 @@ Free list. The first element ginven as parameter.
 ### ft_lstiter
 
 It's aim to aplly function given as argumnet to each content of the list.
-## ft_lstmap
+### ft_lstmap
 
 It's aim to aplly function given as argumnet to each content of the list. It returns new list resulting from succesive application of a function.
