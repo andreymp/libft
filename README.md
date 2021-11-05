@@ -1,5 +1,5 @@
 # libft
-First library with some recoded functions from libc and other external ones
+First library with some recoded functions from libc and other external ones (Definition of project is on branch "master")
 ## Functions from "libc"
 1. isalpha
 2. isdigit
