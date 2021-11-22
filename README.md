@@ -24,7 +24,7 @@ First library with some recoded functions from libc and other external ones (Def
 21. atoi
 22. calloc
 23. strdup
-## Other functions that arfte useful to have
+## Other functions that are not from libc
 ### ft_substr (char *ft_substr(char const *s, unsigned int start, size_t len))
 
 It's aim to allocate a substring from a string.
